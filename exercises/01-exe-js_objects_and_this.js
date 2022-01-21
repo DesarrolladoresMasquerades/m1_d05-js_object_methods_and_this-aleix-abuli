@@ -15,6 +15,8 @@ const chuck = {
       );
     },
     getAge: function() {
+      const millisecondsAge = new Date() - this.birthDate;
+      return Math.floor(millisecondsAge/31536000000);
       // TODO: return the age in this function
       // Hint: to get the current time, you can do: new Date()
       // Hint: to get the birthDate, you can do: this.birthDate
@@ -22,10 +24,12 @@ const chuck = {
       // Hint: convert the milliseconds to years 
     },
     addFriend: function(name) {
+      this.friends.push(name);
       // TODO (don't use return statement)
       // add a name to the friends array. The friend name is passed as a parameter to the function
     },
     getRandomFriend: function() {
+      return this.friends[Math.floor(Math.random()*this.friends.length)]
       // TODO. return a random friend name from the friends array
     }
   };
